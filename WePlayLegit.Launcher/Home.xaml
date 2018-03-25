@@ -1,0 +1,19 @@
+﻿<Window x:Class="PubgTest.StyleLauncher.Home"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PubgTest.StyleLauncher"
+        mc:Ignorable="d"
+        Title="Home" Height="450" Width="800" WindowStyle="None" AllowsTransparency="True" FontFamily="Headliner No. 45" Background="#FF323232">
+    <Grid>
+        <Grid HorizontalAlignment="Left" Height="60" Margin="490,10,0,0" VerticalAlignment="Top" Width="300">
+            <Image x:Name="UserPicture" Margin="240,0,0,0" Source="Images/app.ico" Panel.ZIndex="1"/>
+            <Label x:Name="UserName" Content="Username" Margin="150,0,60,35" Foreground="#FFD8D8D8"/>
+            <Rectangle Fill="#FF4B4B4B" HorizontalAlignment="Left" Height="60" Margin="240,0,0,0" VerticalAlignment="Top" Width="60"/>
+            <Label x:Name="UserRank" Content="Rank" Margin="150,10,60,25" Background="{x:Null}" Foreground="#FFDADADA"/>
+            <Label Content="X DAYS LEFT" Margin="150,20,60,15" Background="{x:Null}" Foreground="#FFDADADA"/>
+        </Grid>
+
+    </Grid>
+</Window>
