@@ -1,8 +1,10 @@
-﻿namespace PubgTest.StyleLauncher
+﻿namespace WePlayLegit.Launcher
 {
     using System.Diagnostics;
     using System.Windows;
     using System.Windows.Input;
+
+    using XenForo.NET;
 
     /// <summary>
     /// Logique d'interaction pour MainWindow.xaml
@@ -13,6 +15,15 @@
         /// Gets the Xenforo Rest API client.
         /// </summary>
         public XenforoApi Api
+        {
+            get;
+            private set;
+        }
+
+        /// <summary>
+        /// Gets the configuration.
+        /// </summary>
+        public XenForoConfig Config
         {
             get;
             private set;
@@ -51,7 +62,7 @@
         public MainWindow()
         {
             InitializeComponent();
-            InitializeApi();
+            this.InitializeApi();
         }
 
         /// <summary>
@@ -59,7 +70,8 @@
         /// </summary>
         public void InitializeApi()
         {
-            this.Api = new XenforoApi();
+            this.Config = new XenForoConfig("https://www.weplaylegit.com/api/", "kRCV5T_HzG", "R310B9fbNVUmWYV");
+            this.Api    = new XenforoApi(Config);
         }
 
         /// <summary>
@@ -80,12 +92,16 @@
             {
                 this.IsLoggedIn = true;
 
-                var Popup = new PopupPubg("\n\nYou have successfully logged in!", "Ok")
+                var Home = new Home()
                 {
                     Owner = this
                 };
 
-                var Result = Popup.ShowDialog();
+                this.Hide();
+
+                Home.ShowDialog();
+
+                this.Show();
             }
             else
             {

@@ -1,4 +1,4 @@
-﻿namespace PubgTest.StyleLauncher
+﻿namespace WePlayLegit.Launcher
 {
     using System.Windows;
 
